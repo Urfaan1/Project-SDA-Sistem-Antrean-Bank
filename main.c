@@ -34,3 +34,50 @@ int main() {
         }
 
   
+       switch (pilihan) {
+            case 1:
+                printf("\nMasukkan nama nasabah: ");
+                while (getchar() != '\n'); 
+                fgets(nama, sizeof(nama), stdin);
+                nama[strcspn(nama, "\n")] = 0;
+             
+                while (1) {                
+                printf("Pilih jenis layanan:\n");
+                printf("  1. Setor Tunai\n");
+                printf("  2. Tarik Tunai\n");
+                printf("  3. Pembukaan Rekening\n");
+                printf("Pilihan Anda: ");
+
+                //Validasi input: harus angka 1-3
+                if (scanf("%d", &pilihanLayanan) != 1) {
+                    printf("Input tidak valid! Masukkan angka antara 1-3.\n");
+                    while (getchar() != '\n'); 
+                    continue; 
+                }
+
+                if (pilihanLayanan < 1 || pilihanLayanan > 3) {
+                    printf("Pilihan tidak valid! Silakan pilih angka 1-3.\n");
+                    while (getchar() != '\n'); 
+                    continue;
+                }
+                while (getchar() != '\n'); // bersihkan sisa input
+                break;
+            }
+
+                char layanan[30];
+                switch (pilihanLayanan) {
+                    case 1:
+                        strcpy(layanan, "Setor Tunai");
+                        break;
+                    case 2:
+                        strcpy(layanan, "Tarik Tunai");
+                        break;
+                    case 3:
+                        strcpy(layanan, "Pembukaan Rekening");
+                        break;
+                }
+
+                tambahNasabah(antrean, nama, layanan);
+                break;
+
+            case 2:
