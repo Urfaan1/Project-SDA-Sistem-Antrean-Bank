@@ -87,3 +87,41 @@ void tampilkanAntrean(Antrean* antrean) {
     printf("+------+----------------+------------------+\n");
     printf("Total nasabah dalam antrean: %d\n", nomor - 1);
 }
+
+// Fungsi untuk menampilkan riwayat transaksi
+void tampilkanRiwayat(Riwayat* riwayat) {
+    if (riwayat->atas == NULL) {
+        printf("Riwayat transaksi kosong.\n");
+        return;
+    }
+
+    Nasabah* temp = riwayat->atas;
+    int nomor = 1;
+
+    printf("\n+------+----------------+------------------+\n");
+    printf("| No.  | Nama Nasabah   | Layanan          |\n");
+    printf("+------+----------------+------------------+\n");
+
+    while (temp != NULL) {
+        printf("| %-4d | %-14s | %-16s |\n", nomor, temp->nama, temp->layanan);
+        temp = temp->next;
+        nomor++;
+    }
+
+    printf("+------+----------------+------------------+\n");
+}
+
+// Fungsi untuk membatalkan transaksi terakhir
+void batalkanTransaksi(Antrean* antrean, Riwayat* riwayat) {
+    Nasabah* nasabahDibatalkan = ambilRiwayat(riwayat);
+    if (nasabahDibatalkan == NULL) {
+        printf("Tidak ada transaksi untuk dibatalkan.\n");
+        return;
+    }
+
+    printf("Transaksi dibatalkan. Nasabah %s dikembalikan ke antrean.\n", nasabahDibatalkan->nama);
+    
+    tambahNasabah(antrean, nasabahDibatalkan->nama, nasabahDibatalkan->layanan);
+    
+    free(nasabahDibatalkan);
+}
