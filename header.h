@@ -22,3 +22,15 @@ typedef struct {
 typedef struct {
     Nasabah* atas; // Pointer ke nasabah teratas di riwayat
 } Riwayat;
+// Deklarasi fungsi
+Antrean* buatAntrean();
+Riwayat* buatRiwayat();
+void tambahNasabah(Antrean* antrean, char nama[], char layanan[]);
+Nasabah* prosesNasabah(Antrean* antrean);
+void simpanRiwayat(Riwayat* riwayat, Nasabah* nasabah);
+Nasabah* ambilRiwayat(Riwayat* riwayat);
+void tampilkanAntrean(Antrean* antrean);
+void tampilkanRiwayat(Riwayat* riwayat);
+void batalkanTransaksi(Antrean* antrean, Riwayat* riwayat);
+
+#endif
