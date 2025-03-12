@@ -22,7 +22,7 @@ Fitur yang tersedia:
 1. Buka terminal pada direktori proyek.
 2. Kompilasi program dengan perintah:
    make
-3. Jalankan program:./program
+3. Jalankan program: ./program
    
  ## Proses kerja program
 1. Tampilan pertama akan diarahkan ke Antarmuka program 
