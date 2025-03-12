@@ -21,8 +21,8 @@ Fitur yang tersedia:
 ## Instruksi Kompilasi dan Menjalankan Program
 1. Buka terminal pada direktori proyek.
 2. Kompilasi program dengan perintah:
-   gcc main.c fungsi.c -o antrean_bank
-3. Jalankan program:./antrean_bank
+   make
+3. Jalankan program:./program
    
  ## Proses kerja program
 1. Tampilan pertama akan diarahkan ke Antarmuka program 
