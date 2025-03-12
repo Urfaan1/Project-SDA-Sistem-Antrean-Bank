@@ -9,7 +9,7 @@
 typedef struct Nasabah {
     char nama[50];
     char layanan[20];
-    struct Nasabah* next; // Tetap menggunakan `struct Nasabah*` di sini
+    struct Nasabah* next; // Tetap menggunakan `struct Nasabah*`
 } Nasabah;
 
 // Struktur data untuk Antrean (Queue)
